@@ -1,0 +1,15 @@
+.input-group.md-form.form-sm.form-1 input {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: none;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  font: arial, helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.input-group-text.purple.lighten-3 {
+  border-radius: 4px;
+  border: 2px solid #ce93d8;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  height: 30px;
+}
