@@ -12,7 +12,7 @@ function App() {
       </div>
       <div className="App-footer">
         Coded by
-        <a href="" target="-blank">
+        <a href="https://github.com/BaharSabet/React-Weather-App" target="-blank">
           {" "}
           Bahar
         </a>
