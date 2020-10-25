@@ -24,7 +24,7 @@ let [unit, setUnit] = useState(props.unit)
                       °C
                     {" "}
                     |
-                    <a href="#" id="fahrenheit-link" onClick={toFahrenheit}>
+                    <a href="/" id="fahrenheit-link" onClick={toFahrenheit}>
                       {" "}
                       °F
                     </a>
@@ -35,7 +35,7 @@ let [unit, setUnit] = useState(props.unit)
         <div>
                   <span className="temperature">{Math.round(fahrenheit)}</span>
                   <span className="units">
-                    <a href="#" id="celsius-link" onClick={toCelsius}>
+                    <a href="/" id="celsius-link" onClick={toCelsius}>
                       °C
                     </a>{" "}
                     |

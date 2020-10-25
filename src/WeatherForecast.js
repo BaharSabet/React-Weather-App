@@ -7,6 +7,7 @@ export default function WeatherForecast(props){
     let futureIconId = ["200", "500", "500", "500", "200", "200", "200", "200"]
     let futureTemp = [19, 20, 21, 19, 18, 18, 17, 17]
     let date = new Date()
+    /*eslint no-extend-native: ["error", { "exceptions": ["Date"] }]*/
     Date.prototype.addHours = function(h) { 
             this.setTime(this.getTime() + 
                          (h * 60 * 60 * 1000)); 
