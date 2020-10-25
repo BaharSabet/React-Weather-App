@@ -1,0 +1,8 @@
+li {
+  display: inline-block;
+  text-align: left;
+  color: #878787;
+  font: arial, helvetica, sans-serif;
+  margin: 0 10px 0;
+  font-size: 14px;
+}

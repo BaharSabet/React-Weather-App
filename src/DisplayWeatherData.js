@@ -28,8 +28,6 @@ export default function DisplayWeatherData(props){
           <div className="row">
             <div className="col-6">
               <div className="Temp">
-                
-              
                 <span className="temp">               
                   <DisplayTemp temperature = {props.data.temp} unit = "celsius" iconId={props.data.iconId}/>
                 </span>

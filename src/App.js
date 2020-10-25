@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchPage from "./Search";
 import "./App.css";
 

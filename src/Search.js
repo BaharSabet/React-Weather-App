@@ -2,25 +2,29 @@ import React, { useState } from "react";
 import axios from "axios";
 import { MDBCol, MDBIcon } from "mdbreact";
 import DisplayWeatherData from "./DisplayWeatherData"
+import WeatherForecast from "./WeatherForecast"
 import "./Search.css";
 
 const SearchPage = (props) => {
-  let searchedCity = props.city
-  let [loaded, setLoaded] = useState("True")
-   let [weatherData, setWeatherData] = useState({
+  //let searchedCity = props.city
+  let [newCity, setNewCity] = useState(props.city)
+  let [loaded, setLoaded] = useState(true)
+      let [forecast, setForecast]=useState(null)
+
+  let [weatherData, setWeatherData] = useState({
     city : props.city,
     temp: 19,
     wind: 29,
     humidity: 34,
     description: "clear",
-    iconId: 500,
+    iconId: "500",
     //dt: 1603127287
   });
  
   function updateCity(event) {
     event.preventDefault();
-    searchedCity = event.target.value
-    setLoaded("False")
+    setNewCity(event.target.value)
+    setLoaded(false)  
   }
    function updateInfo(response) {
     setWeatherData({
@@ -32,16 +36,22 @@ const SearchPage = (props) => {
       iconId: response.data.weather[0].id,
       //dt: response.data.dt
     });
-     setLoaded("True")
+     setLoaded(true)
     //console.log(response)
     //console.log(searchedCity)
   }
+  function getForecast(response){
+        setForecast(response.data)
+        
+  }
   function handleSearch(event) {
     event.preventDefault();
-    if (loaded !== "True"){
+    if (!loaded){
       const apiKey = "9154daef331ecbea43e8a26eb1a85f04";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${apiKey}&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${newCity}&appid=${apiKey}&units=metric`;
     axios.get(url).then(updateInfo);
+    let link = `https://api.openweathermap.org/data/2.5/forecast?q=${newCity}&appid=${apiKey}&units=metric`;
+    axios.get(link).then(getForecast);
     }
     
   }
@@ -62,8 +72,10 @@ const SearchPage = (props) => {
           </div>
         </div>
       </MDBCol>
-      <DisplayWeatherData data={weatherData}/>   
+      <DisplayWeatherData data = {weatherData}/>
+      <WeatherForecast data = {forecast}/>
     </div>
+    
   );
 };
 
