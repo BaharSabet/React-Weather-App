@@ -35,7 +35,7 @@ export default function WeatherForecast(props){
                 { futureIconId.map(function(code,index){ 
                     return(
                         <li key={index}>
-                            <div>{date.addHours(index)}:00</div>
+                            <div>{date.addHours(3)}:00</div>
                             <div> <WeatherIcon name="owm" iconId={code} flip="horizontal" rotate="90" /></div>
                             <div>{futureTemp[index]}°C</div>
                         </li>        
